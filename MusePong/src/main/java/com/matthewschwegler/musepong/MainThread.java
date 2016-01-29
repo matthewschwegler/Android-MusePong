@@ -34,13 +34,17 @@ public class MainThread extends Thread {
             canvas = null;
 
             //try locking the canvas for pixel editing
+            canvas = this.surfaceHolder.lockCanvas();
             try {
-                canvas = this.surfaceHolder.lockCanvas();
                 synchronized (surfaceHolder) {
                     this.gamePanel.update();
                     this.gamePanel.draw(canvas);
                 }
             } catch (Exception e) {
+                if(e instanceof IllegalArgumentException) {
+                    this.surfaceHolder.unlockCanvasAndPost(canvas);
+                    continue;
+                }
             } finally {
                 if (canvas != null) {
                     try {
@@ -50,6 +54,20 @@ public class MainThread extends Thread {
                     }
                 }
             }
+
+            /*
+            synchronized (surfaceHolder){
+                canvas = this.surfaceHolder.lockCanvas();
+                if (canvas != null) {
+                    try {
+                        surfaceHolder.unlockCanvasAndPost(canvas);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            */
+
             timeMilli = (System.nanoTime() - startTime) / GamePanel.MILLION;
             waitTime = targetTime - timeMilli;
 
