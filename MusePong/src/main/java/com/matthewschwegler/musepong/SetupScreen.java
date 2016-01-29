@@ -23,41 +23,6 @@ public class SetupScreen extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_setup_screen);
 
-        //Start game when play button is hit.
-        /*
-        Button play_button =  (Button) findViewById(R.id.play_button);
-        play_button.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                Intent intent = new Intent(view.getContext(), Game.class);
-                startActivity(intent);
-                return false;
-            }
-        });
-        //Exit game if exit button is hit.
-        Button exit_button =  (Button) findViewById(R.id.exit_button);
-        exit_button.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                finish();
-                return false;
-            }
-        });
-*/
-
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        */
     }
 
     public void startGame(View view){

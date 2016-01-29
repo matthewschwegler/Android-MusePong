@@ -19,7 +19,6 @@ public class Game extends Activity {
         super.onCreate(savedInstanceState);
         //turn title off
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.
 
         //set to full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);

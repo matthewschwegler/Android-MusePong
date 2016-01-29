@@ -30,9 +30,9 @@ public class PongPaddle extends GameObject {
     }
 
     public void moveDown(){
-        System.out.println("TOP y: " + y + " pos " + (y+GamePanel.PADDLE_MOVESPEED) + " Bound " + (GamePanel.HEIGHT - 15));
+        //System.out.println("TOP y: " + y + " pos " + (y+GamePanel.PADDLE_MOVESPEED) + " Bound " + (GamePanel.HEIGHT - 15));
         if((y + GamePanel.PADDLE_MOVESPEED + GamePanel.PADDLE_HEIGHT) < (GamePanel.HEIGHT - 15)){
-            System.out.println("MOVING DOWN");
+            //System.out.println("MOVING DOWN");
             y += GamePanel.PADDLE_MOVESPEED;
         }
     }
